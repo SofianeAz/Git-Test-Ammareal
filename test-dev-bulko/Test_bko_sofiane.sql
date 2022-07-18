@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 18 juil. 2022 à 14:15
+-- Généré le : lun. 18 juil. 2022 à 17:51
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `tel` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `message` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nom` varchar(20) CHARACTER SET UTF8MB4 NOT NULL,
+  `email` varchar(20) CHARACTER SET UTF8MB4 NOT NULL,
+  `tel` varchar(10) CHARACTER SET UTF8MB4 NOT NULL,
+  `message` text CHARACTER SET UTF8MB4 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `message`
@@ -58,9 +58,12 @@ INSERT INTO `message` (`id`, `nom`, `email`, `tel`, `message`) VALUES
 (23, 'Sofiane Azougar', 'sofiane.azougar@gmai', '0781210136', ' dqdqs'),
 (24, 'Sofiane Azougar', 'sofiane.azougar@gmai', '0781210136', ' dsqd'),
 (25, 'Sofiane Azougar', 'sofiane.azougar@gmai', '0781210136', ' dqssq'),
-(26, 'Sofiane Azougar', 'sofiane.azougar@gmai', '0781210136', ' dqdqs');
-COMMIT;
+(26, 'Sofiane Azougar', 'sofiane.azougar@gmai', '0781210136', ' dqdqs'),
+(27, 'Sofiane Azougar', 'sofiane.azougar@qdss', '0781210136', ' qdsqsdqs'),
+(28, 'Pas de nom', 'last.test@gmail.com', '0781210136', ' '),
+(29, 'Pas de nom', 'last.test@gmail.com', '0781210136', ' '),
+(30, 'Pas de nom', 'last.test@gmail.com', '0781210136', ' '),
+(31, 'test', 'testt@gmail.com', '0781210136', ' '),
+(32, 'Pas de nom', 'testing.portfolio@gmail.com', '0755554422', 'Pas de message'),
+(33, 'Pas de nom', 'testing.portfolio@gmail.com', '0755554422', 'Pas de message');
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
