@@ -62,9 +62,9 @@ class MailController {
 
         $count = $query->rowCount();
         if($count > 0){
-            return 'Le message a été envoyé avec succès !';
+            return 'success';
         } else {
-            return 'Il y a eu une érreur, veuillez rééssayer.';
+            return 'error';
         }
     }
     
