@@ -34,20 +34,20 @@ class MailController {
     public function postMail($data){
         $db = DBConnector::getInstance();
 
-        $nom = strip_tags($data['nom']);
+        $data['nom'] ? $nom = strip_tags($data['nom']) : $nom = 'Pas de nom';
         $email = strip_tags($data['email']);
         $tel = strip_tags($data['tel']);
-        $message = strip_tags($data['message']);
+        $data['message'] ? $message = strip_tags($data['message']) : $message = 'Pas de message';
 
         // check du mail
-        // $check = filter_var($email, FILTER_VALIDATE_EMAIL);
-        // if(!$check){ return 'L\'adresse mail est invalide.'; }
+        $check = filter_var($email, FILTER_VALIDATE_EMAIL);
+        if(!$check){ return 'L\'adresse mail est invalide.'; }
 
-        // // check que le numéro de tel commence par 0
-        // $telCheck = explode('', $tel);
-        // if($telCheck[0] <> '0'){ return json_encode('Le numéro doit commencé par 0.'); }
-        // if(preg_match("/^[0-9]+$/", $tel) <> 1){ return json_encode('Le numéro doit être composé seulement de chiffres.'); }
-        // if(str_len($tel) <> 10){ return json_encode('Le numéro doit être composé de 10 chiffres.'); }
+        // check que le numéro de tel commence par 0
+        $telCheck = str_split($tel);
+        if($telCheck[0] <> '0'){ return 'Le numéro doit commencé par 0.'; }
+        if(preg_match("/^[0-9]+$/", $tel) <> 1){ return 'Le numéro doit être composé seulement de chiffres.'; }
+        if(strlen($tel) <> 10){ return 'Le numéro doit être composé de 10 chiffres.'; }
 
 
 

@@ -6,7 +6,7 @@ $(document).ready(function () {
           tel: $('#tel').val(),
           message: $('#message').val()
       };
-      console.log(formData);
+  
       $.ajax({
         type: "POST",
         url: "/Views/mail_send.php",
@@ -14,12 +14,18 @@ $(document).ready(function () {
         dataType: "text",
         encode: true,
         success: function(response){
-          // console.log(response);
           $('#response').css('display', 'flex');
-          $('#response').append(response);
+          let p = document.createElement('p');
+          
+          $('#response').append(p);
+          p.innerHTML = response;
+          setTimeout(() => {
+            $('#response > p').remove();
+            $('#response').css('display', 'none');          
+          }, 5000)
         }
       }).done(function (data) {
-        console.log(JSON.stringify(data));
+        // console.log(JSON.stringify(data));
       });
   
       event.preventDefault();
