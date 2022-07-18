@@ -8,7 +8,9 @@ $id = intval($urlArray[2]);
 $mailData = [];
 
 ?>
-
+<span class="return-link-container">
+    <a class="return-link" href="/message">Retour à mes messages.</a>
+</span>
 <div class="message-container">
         <?php
        
@@ -25,10 +27,13 @@ $mailData = [];
             if(data[0] !== false){
                 console.log(data);
                 data.forEach((e)=>{
-                    container.innerHTML = ` <div class="message-card">
-                                                    <h3>Nom : ${e.nom}</h3>
-                                                    <h4>Mail ${e.email}</h4>
-                                                    <h4>Tel ${e.tel}</h4>
+                    container.innerHTML = ` <div class="message-full-card">
+                                                    <div class="card-desc">
+                                                        <h3>Nom : ${e.nom}</h3>
+                                                        <h3>Adresse Email : ${e.email}</h3>
+                                                        <h3>N° de Téléphone : ${e.tel}</h3>
+                                                    </div>
+                                                     <h4> Message :</h3>
                                                      <p>${e.message}</p>
                                             </div>
                                             `;

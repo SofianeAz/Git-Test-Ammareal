@@ -20,9 +20,10 @@ $mailData = $MailController->getMails();
                 data.forEach((e)=>{
                     container.innerHTML += ` <div class="message-card">
                                                     <h3>Nom : ${e.nom}</h3>
-                                                    <h4>Mail ${e.email}</h4>
-                                                    <h4>Tel ${e.tel}</h4>
-                                                     <p>${e.message}</p>
+                                                    <h3>Adresse Email : ${e.email}</h3>
+                                                    <h3>N° de Téléphone : ${e.tel}</h3>
+                                                    
+                                                     <a class="msg-link" href="/message/${e.id}"> Voir plus</a>
                                             </div>
                                             `;
                 }) 
