@@ -1,0 +1,10 @@
+{
+    "name": "vendor/app",
+    "description": "app",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
