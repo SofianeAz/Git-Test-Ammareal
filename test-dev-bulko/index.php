@@ -47,9 +47,6 @@ require './vendor/autoload.php';
 		}
 	}
 
-	// if($route === 'mail_send'){
-	// 	include_once './Views/mail_send.php';
-	// }
 	?>
 
 
