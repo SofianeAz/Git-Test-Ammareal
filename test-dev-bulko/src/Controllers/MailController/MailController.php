@@ -52,7 +52,7 @@ class MailController {
         $mail->setMessage($message);
 
         // check du mail
-        $check = filter_var($email, FILTER_VALIDATE_EMAIL);
+        $check = filter_var($emailAddress, FILTER_VALIDATE_EMAIL);
         if(!$check){ return 'L\'adresse mail est invalide.'; }
 
         // check que le numéro de tel commence par 0
