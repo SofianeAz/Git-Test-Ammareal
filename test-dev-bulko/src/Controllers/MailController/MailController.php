@@ -55,10 +55,14 @@ class MailController {
         $check = filter_var($emailAddress, FILTER_VALIDATE_EMAIL);
         if(!$check){ return 'L\'adresse mail est invalide.'; }
 
-        // check que le numéro de tel commence par 0
+        // check n° de tel
         $telCheck = str_split($tel);
+
+        // check que le numéro de tel commence par 0
         if($telCheck[0] <> '0'){ return 'Le numéro doit commencé par 0.'; }
+        // check que le numéro de tel est composé de chiffres
         if(preg_match("/^[0-9]+$/", $tel) <> 1){ return 'Le numéro doit être composé seulement de chiffres.'; }
+        // check que le numéro de tel est composé de 10 chiffres.
         if(strlen($tel) <> 10){ return 'Le numéro doit être composé de 10 chiffres.'; }
 
 
