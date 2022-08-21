@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `message` (
 INSERT INTO `message` (`id`, `nom`, `email`, `tel`, `message`) VALUES
 (1, 'bul ko', 'testBko1@bulko.net', '0770707070', 'Pony ipsum dolor sit amet it needs to be about 20% cooler. Parasprite Cheerilee friend Ms. Peachbottom, Cheese Sandwich sun Zecora dragon Pumpkin Cake Trixie Spitfire Princess Luna. Tail Big McIntosh Flam Scootaloo, Donut Joe Philomena rainbow power Gummy Cranky Doodle Donkey Wonderbolts breezies Zecora friend. Lightning Dust Prim Hemline Wonderbolts Nightmare Moon Ms. Harshwhinny laugher kindness.'),
 (2, 'bul ko2', 'testBko2@bulko.net', '0770707070', 'Pony ipsum dolor sit amet magic nulla adipisicing apples commodo magna. Pony Daring Do Matilda Cheese Sandwich chaos dolor, aliquip hoof Spitfire veniam Dr. Caballeron mane Maud Pie. Featherweight Bon Bon Opalescence Matilda hay. Alicorn Everfree Forest magic culpa sunt Twist occaecat proident pony consequat. Cupcake non Flash Sentry, enim dolore ex aliqua muffin Zecora wing pony chaos Sonata Dusk horn irure.'),
-(3, '', 'testUnknow@bulko.net', '0770707072', ''),
+(3, '', 'testUnknown@bulko.net', '0770707072', ''),
 (4, 'sofiane', 'hello@world.net', '0781210136', 'hello world'),
 (16, 'Sofiane Azougar', 'dqssqdqs@gmail.com', '0781210136', ' dqsqqqsd'),
 (15, '', '', '', ''),

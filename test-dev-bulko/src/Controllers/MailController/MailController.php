@@ -33,11 +33,23 @@ class MailController {
 
     public function postMail($data){
         $db = DBConnector::getInstance();
+        $mail = new Mail();
 
+        // assignation des variables
+
+        // nom
         $data['nom'] ? $nom = strip_tags($data['nom']) : $nom = 'Pas de nom';
-        $email = strip_tags($data['email']);
+        // mail
+        $emailAddress = strip_tags($data['email']);
+        // tel
         $tel = strip_tags($data['tel']);
+        // message
         $data['message'] ? $message = strip_tags($data['message']) : $message = 'Pas de message';
+
+        $mail->setName($nom);
+        $mail->setMail($emailAddress);
+        $mail->setTel($tel);
+        $mail->setMessage($message);
 
         // check du mail
         $check = filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -54,10 +66,10 @@ class MailController {
         $sql = 'INSERT INTO `message` (nom, email, tel, `message`)
                     VALUES (?, ?, ?, ?)';
         $query = $db->pQuery($sql);
-        $query->bindValue(1, $nom, PDO::PARAM_STR);
-        $query->bindValue(2, $email, PDO::PARAM_STR);
-        $query->bindValue(3, $tel, PDO::PARAM_STR);
-        $query->bindValue(4, $message, PDO::PARAM_STR);
+        $query->bindValue(1, $mail->getName(), PDO::PARAM_STR);
+        $query->bindValue(2, $mail->getMail(), PDO::PARAM_STR);
+        $query->bindValue(3, $mail->getTel(), PDO::PARAM_STR);
+        $query->bindValue(4, $mail->getMessage(), PDO::PARAM_STR);
         $query->execute();
 
         $count = $query->rowCount();
